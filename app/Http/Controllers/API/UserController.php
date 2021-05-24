@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use League\CommonMark\Extension\SmartPunct\PunctuationParser;
 
-class APIUserController extends Controller
+class UserController extends Controller
 {
 
     use PasswordValidationRules;
