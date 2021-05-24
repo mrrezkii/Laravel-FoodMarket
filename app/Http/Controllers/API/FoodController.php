@@ -6,6 +6,8 @@ use App\Helpers\ResponseFormatter;
 use App\Models\Food;
 use Illuminate\Http\Request;
 
+use function PHPSTORM_META\map;
+
 class FoodController extends Controller
 {
     public function all(Request $request)
@@ -68,6 +70,11 @@ class FoodController extends Controller
         {
             $food->where('price', '<=', $rate_to);
         }
+
+        return ResponseFormatter::success(
+            $food->paginate($limit),
+            'Data list produk berhasil di ambil'
+        );
         
         
     }
