@@ -85,4 +85,11 @@ class APIUserController extends Controller
             ], 'Authentication Falied', 500);
         }
     }
+
+    public function logout(Request $request)
+    {
+        $token = $request->user()->currentAccessToken()->delete;
+
+        return ResponseFormatter::success($token, 'Token Revoked');
+    }
 }
